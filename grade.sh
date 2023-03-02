@@ -35,5 +35,6 @@ javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
 java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore TestListExamples > results.txt
 
 grep "Exception" results.txt > grade.txt
-head -n 2 results.txt > testoutput.txt
-grep -o -i E testoutput.txt > plswork.txt
+head -n 2 results.txt > output.txt
+grep "E" -o output.txt | wc -l  > plswork.txt
+grep . -o output.txt | wc -l  > plswork2.txt
